@@ -7,14 +7,14 @@ public class FileIOSystem
 		
 	}
 	
-	public void RoadSaveFile()
+	public GameDataStorage RoadSaveFile()
 	{
-		
+		return new GameDataStorage(0, 0, null, null);
 	}
 	
-	public void WriteSaveFile()
+	public boolean WriteSaveFile()
 	{
-		
+		return true;
 	}
 
 }

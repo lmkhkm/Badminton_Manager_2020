@@ -72,7 +72,7 @@ public class MainMenuFrame extends JFrame
 		public void actionPerformed(ActionEvent e) 
 		{
 			setVisible(false);
-			MainGameFrame mainGameFrame = new MainGameFrame();
+			GameRoadFrame gameRoadFrame = new GameRoadFrame();
 		}
 	}
 	
