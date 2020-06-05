@@ -1,11 +1,12 @@
 package gameSystem;
 
 import gameUI.GameUIMaster;
+import gameUI.MainMenuFrame;
 
 public class MainClass 
 {
 	public static void main(String[] args)
 	{
-		GameUIMaster uiMaster = new GameUIMaster();
+		MainMenuFrame mainMenu = new MainMenuFrame();
 	}
 }
