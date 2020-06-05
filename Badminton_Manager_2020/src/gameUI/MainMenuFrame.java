@@ -2,6 +2,7 @@ package gameUI;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.ImageIcon;
@@ -19,7 +20,7 @@ public class MainMenuFrame extends JFrame
 		setTitle("Badminton Manager");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		GridLayout gird = new GridLayout(2,1);
+		GridLayout gird = new GridLayout(3,1);
 		BorderLayout bord = new BorderLayout(10,10);
 		
 		Container mainCont = getContentPane();
@@ -36,6 +37,10 @@ public class MainMenuFrame extends JFrame
 		JButton newGameButton = new JButton("새로운 게임");
 		JButton roadGameButton = new JButton("불러오기");
 		
+		JLabel titleLabel = new JLabel("BADMINTON MANAGER 2020");
+		titleLabel.setHorizontalAlignment(JLabel.CENTER);
+		titleLabel.setFont(new Font("Gulim", Font.BOLD, 30));
+		mainMenu.add(titleLabel);
 		mainMenu.add(newGameButton);
 		mainMenu.add(roadGameButton);
 		
