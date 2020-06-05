@@ -1,14 +1,8 @@
 package gameUI;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.GridLayout;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 
 public class GameUIMaster extends JFrame
 {
