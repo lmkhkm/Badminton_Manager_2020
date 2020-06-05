@@ -4,7 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.GridLayout;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,6 +38,9 @@ public class MainMenuFrame extends JFrame
 		JButton newGameButton = new JButton("새로운 게임");
 		JButton roadGameButton = new JButton("불러오기");
 		
+		newGameButton.addActionListener(new NewGameActionListener());
+		roadGameButton.addActionListener(new RoadGameActionListener());
+		
 		JLabel titleLabel = new JLabel("BADMINTON MANAGER 2020");
 		titleLabel.setHorizontalAlignment(JLabel.CENTER);
 		titleLabel.setFont(new Font("Gulim", Font.BOLD, 30));
@@ -52,4 +56,27 @@ public class MainMenuFrame extends JFrame
 		setSize(800,800);
 	}
 
+	class NewGameActionListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			setVisible(false);
+			NewGameSettingFrame gameSettingFrame = new NewGameSettingFrame();
+		}
+	}
+	
+	class RoadGameActionListener implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			setVisible(false);
+			MainGameFrame mainGameFrame = new MainGameFrame();
+		}
+	}
+	
 }
+
+
+
