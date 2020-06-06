@@ -11,7 +11,7 @@ public class GameDataStorage
 	
 	public Vector<BadmintonPlayer> players = new Vector<BadmintonPlayer>();
 	
-	GameDataStorage(int difficulty, int money, String teamName, BadmintonPlayer[] players)
+	public GameDataStorage(int difficulty, int money, String teamName, BadmintonPlayer[] players)
 	{
 		this.difficulty = difficulty;
 		this.money = money;
