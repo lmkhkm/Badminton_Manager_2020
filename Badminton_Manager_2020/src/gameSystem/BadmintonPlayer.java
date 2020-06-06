@@ -9,7 +9,7 @@ public class BadmintonPlayer
 	
 	public boolean canPlay;
 	
-	BadmintonPlayer(int strangth, int endurance, int agility, int curStamina, String curState, boolean canPlay)
+	public BadmintonPlayer(int strangth, int endurance, int agility, int curStamina, String curState, boolean canPlay)
 	{
 		this.playerStat[0] = strangth;
 		this.playerStat[1] = endurance;

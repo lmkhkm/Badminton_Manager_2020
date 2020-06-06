@@ -84,9 +84,16 @@ public class NewGameSettingFrame extends JFrame
 			else
 			{
 				setVisible(false);
-				MainGameFrame mainGame = new MainGameFrame();
-				gameData = new GameDataStorage(0,1000,"¿”Ω√ ∆¿", new BadmintonPlayer[3]);
+				BadmintonPlayer[] players = new BadmintonPlayer[3];
+				for (int i=0;i<3;i++)
+				{
+					players[i] = new BadmintonPlayer(5,5,5,100,"«Æ ƒ¡µº«", true);
+				}
+				
+				gameData = new GameDataStorage(0,1000,"¿”Ω√ ∆¿", players);
 				MainClass.gameData = gameData;
+
+				MainGameFrame mainGame = new MainGameFrame();
 			}
 			
 		}
