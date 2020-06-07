@@ -21,6 +21,11 @@ public class NewGameSettingFrame extends JFrame
 {
 	JButton backButton = new JButton("뒤로 가기");
 	
+	JTextField teamNameIs = new JTextField(15);
+	
+	JRadioButton gameDifficultEasy = new JRadioButton("쉬움");
+	JRadioButton gameDifficultHard = new JRadioButton("어려움");
+	
 	GameDataStorage gameData;
 	
 	NewGameSettingFrame()
@@ -36,7 +41,7 @@ public class NewGameSettingFrame extends JFrame
 		JLabel teamSetting = new JLabel("팀 세팅");
 		JPanel teamNamePanel = new JPanel(); 
 		JLabel teamNameLable = new JLabel("팀 이름 :"); teamNamePanel.add(teamNameLable);
-		JTextField teamNameIs = new JTextField(15); teamNamePanel.add(teamNameIs);
+		teamNamePanel.add(teamNameIs);
 		
 		
 		backButton.addActionListener(new PressButton());
@@ -44,8 +49,8 @@ public class NewGameSettingFrame extends JFrame
 		JLabel gameSetting = new JLabel("게임 세팅");
 		JPanel gameDifficultPanel = new JPanel();
 		
-		JRadioButton gameDifficultEasy = new JRadioButton("쉬움"); gameDifficultEasy.setSelected(true);
-		JRadioButton gameDifficultHard = new JRadioButton("어려움");
+		 gameDifficultEasy.setSelected(true);
+		
 		ButtonGroup diffButtons = new ButtonGroup();
 		diffButtons.add(gameDifficultEasy);
 		diffButtons.add(gameDifficultHard);
@@ -90,7 +95,7 @@ public class NewGameSettingFrame extends JFrame
 					players[i] = new BadmintonPlayer(5,5,5,100,"풀 컨디션", true);
 				}
 				
-				gameData = new GameDataStorage(0,1000,"임시 팀", players);
+				gameData = new GameDataStorage(0,1000,teamNameIs.getText(), players);
 				MainClass.gameData = gameData;
 
 				MainGameFrame mainGame = new MainGameFrame();
