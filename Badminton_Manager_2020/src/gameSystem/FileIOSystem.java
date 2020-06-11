@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class FileIOSystem 
 {
-	FileIOSystem()
+	public FileIOSystem()
 	{
 		
 	}
@@ -30,13 +30,15 @@ public class FileIOSystem
 			writer.write(st);
 			writer.flush();
 			writer.close();
+			return true;
 		} catch (IOException e) {
 			System.out.println("파일 로딩 실패");
 			e.printStackTrace();
+			return false;
 		}
 		
 		
-		return true;
+		
 	}
 	
 

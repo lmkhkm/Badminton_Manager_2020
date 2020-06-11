@@ -16,6 +16,7 @@ import javax.swing.JSlider;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import gameSystem.FileIOSystem;
 import gameSystem.MainClass;
 
 public class MainGameFrame extends JFrame
@@ -50,6 +51,7 @@ public class MainGameFrame extends JFrame
 		
 		JPanel menuBar = new JPanel();
 		JButton gameSaveButton = new JButton("게임 저장"); menuBar.add(gameSaveButton);
+		gameSaveButton.addActionListener(new gameSaveButtonAction());
 		
 		JButton showGameSettingButton = new JButton("게임 설정, 설명 보기"); menuBar.add(showGameSettingButton); 
 		showGameSettingButton.addActionListener(new discriptionAction());
@@ -155,11 +157,16 @@ public class MainGameFrame extends JFrame
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			FileIOSystem fio = new FileIOSystem();
+			
+			fio.WriteSaveFile();
+			
 			mainCont.getComponent(1).setVisible(false);
 			mainCont.remove(mainCont.getComponent(1));
 			mainCont.add(new JTextArea("게임이 저장됨"),BorderLayout.CENTER);
 		}
 		
 	}
+	
 
 }
