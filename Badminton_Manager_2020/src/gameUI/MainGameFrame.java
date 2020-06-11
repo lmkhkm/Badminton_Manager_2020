@@ -2,6 +2,7 @@ package gameUI;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,6 +30,10 @@ public class MainGameFrame extends JFrame
 	JTextField trainingStetTextField = new JTextField(30);
 	
 	JTextArea gameScriptTextArea = new JTextArea();
+	JButton gameSmashButton = new JButton("스매시 공격!");
+	JButton gameSubButton = new JButton("서브 넣기");
+	JLabel gameScoreLabel = new JLabel("우리  0   VS   0  상대");
+	
 	
 	int myScore = 0;
 	int thereScore = 0;
@@ -42,8 +47,6 @@ public class MainGameFrame extends JFrame
 		
 		GridLayout gird = new GridLayout(3,1);
 		BorderLayout bord = new BorderLayout(10,10);
-		
-		
 		
 		JPanel menuBar = new JPanel();
 		JButton gameSaveButton = new JButton("게임 저장"); menuBar.add(gameSaveButton);
@@ -90,8 +93,15 @@ public class MainGameFrame extends JFrame
 		 * 아래 gamePanel
 		 */
 		
-		gamePanel.setLayout(new GridLayout(3,1));
+		gamePanel.setLayout(new GridLayout(4,1));
 		gamePanel.add(gameScriptTextArea);
+		gamePanel.add(gameScoreLabel);
+		gameScoreLabel.setFont(new Font("Gulim", Font.BOLD, 30));
+		gameScoreLabel.setHorizontalAlignment(JLabel.CENTER);
+		
+		gamePanel.add(gameSmashButton);
+		gamePanel.add(gameSubButton);
+		
 		
 		
 		
@@ -134,7 +144,8 @@ public class MainGameFrame extends JFrame
 		public void actionPerformed(ActionEvent e) {
 			mainCont.getComponent(1).setVisible(false);
 			mainCont.remove(mainCont.getComponent(1));
-			mainCont.add(new JTextArea("만든이 중앙대학교 기계공학부 허준구/r/n게임 설명: 선수를 훈련시키고 경기에 투입하세요 단 스테미너가 너무 떨어지면 안됩니다"),BorderLayout.CENTER);
+			mainCont.add(new JTextArea("만든이 중앙대학교 기계공학부 허준구  "
+					+ "게임 설명: 선수를 훈련시키고 경기에 투입하세요 단 스테미너가 너무 떨어지면 안됩니다"),BorderLayout.CENTER);
 		}
 		
 	}
